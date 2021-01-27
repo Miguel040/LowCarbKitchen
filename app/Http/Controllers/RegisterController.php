@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
 {
@@ -22,10 +25,12 @@ class RegisterController extends Controller
 
    User::create([
         'name' => $request->name,
-        'username' => $request->name,
-        'email' => $request->name,
+        'username' => $request->username,
+        'email' => $request->email,
         'password' => Hash::make($request->password),
    ]); 
+
+   return view('home'); 
  }
 }
 
