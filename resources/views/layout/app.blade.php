@@ -10,7 +10,7 @@
     <div class="container mx-auto bg-green-200 p-5 shadow-lg rounded-b-lg">
         <nav class="flex justify-between">
             <div>
-                <a href="#">  Logo</a>
+                <a href="#">Logo</a>
             </div>
             <ul class="flex flex-row justify-center">
                 <li class="pr-5"><a href="">Beliebte Rezepte</a></li>
@@ -20,7 +20,7 @@
             </ul>
 
             <ul>
-            <li class="pr-5"><a href="">Login</a></li>
+            <li class="pr-5"><a href="{{ route('login') }}">Login</a></li>
             <li class="pr-5"><a href="{{ route('register') }}">Regestrieren</a></li>
             </ul>
         </nav>
