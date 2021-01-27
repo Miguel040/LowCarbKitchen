@@ -9,7 +9,7 @@
         
         <div class="mb-5">
             <label for="name">Name</label>
-            <input type="text" id="name" name="Name" placeholder="Gebe deinen Namen ein" class="bg-gray-100 border-2 w-full p-4 rounded-lg 
+            <input type="text" id="name" name="name" placeholder="Gebe deinen Namen ein" class="bg-gray-100 border-2 w-full p-4 rounded-lg 
             @error('name') border-red-500 @enderror" value="{{ old('name')}}">
 
             @error('name')
@@ -31,7 +31,7 @@
         <div class="mb-5">
             <label for="email">E-mail</label>
             <input type="email" id="email" name="email" placeholder="Gebe deine E-Mail Adresse an" class="bg-gray-100 border-2 w-full p-4 rounded-lg
-            @error('email') border-red-500 @enderror" value="{{ old('')}}">
+            @error('email') border-red-500 @enderror" value="{{ old('email')}}">
             @error('email')
                 <div>
                     <p class="text-red-500">{{$message}}</p>
@@ -50,7 +50,7 @@
         </div>
         <div class="mb-5">
             <label for="password_confirmation">Passwort Wiederholen</label>
-            <input type="password_confirmation" id="password_confirmation" name="password_confirmation" placeholder="Bitte wiederhole dein Passwort" class="bg-gray-100 border-2 w-full p-4 rounded-lg
+            <input type="password" id="password_confirmation" name="password_confirmation" placeholder="Bitte wiederhole dein Passwort" class="bg-gray-100 border-2 w-full p-4 rounded-lg
             @error('password_confirmation') border-red-500 @enderror">
             @error('password_confirmation')
                 <div>
