@@ -20,8 +20,14 @@
             </ul>
 
             <ul>
+            @guest
             <li class="pr-5"><a href="{{ route('login') }}">Login</a></li>
             <li class="pr-5"><a href="{{ route('register') }}">Regestrieren</a></li>
+            @endguest
+
+            @auth
+            <li class="pr-5"><a href="{{ route('logout') }}">Logout</a></li>
+            @endauth
             </ul>
         </nav>
     </div>
