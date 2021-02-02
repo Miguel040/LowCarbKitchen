@@ -10,12 +10,12 @@
     <div class="container mx-auto bg-green-200 p-5 shadow-lg rounded-b-lg">
         <nav class="flex justify-between">
             <div>
-                <a href="#">Logo</a>
+                <a href="{{ route('home') }}">Logo</a>
             </div>
             <ul class="flex flex-row justify-center">
-                <li class="pr-5"><a href="">Beliebte Rezepte</a></li>
-                <li class="pr-5"><a href="">Zufälliges Rezept</a></li>
-                <li class="pr-5"><a href="">Mein Kochbuch</a></li>
+                <li class="pr-5"><a href="{{ route('famrecipes') }}">Beliebte Rezepte</a></li>
+                <li class="pr-5"><a href="{{ route('ranrecipe') }}">Zufälliges Rezept</a></li>
+                <li class="pr-5"><a href="{{ route('favrecipes') }}">Mein Kochbuch</a></li>
 
             </ul>
 
