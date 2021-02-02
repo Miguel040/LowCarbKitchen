@@ -4,6 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\recipes\NewRecipeController;
+use App\Http\Controllers\recipes\RanrecipeController;
+use App\Http\Controllers\recipes\FamrecipesController;
+use App\Http\Controllers\recipes\FavrecipesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +31,8 @@ Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'store']); 
 
 Route::get('/logout', [LogoutController::class, 'store'])->name('logout'); 
+
+Route::get('/famrecipes', [FamrecipesController::class, 'index'])->name('famrecipes'); 
+Route::get('/ranrecipe', [RanrecipeController::class, 'index'])->name('ranrecipe');
+Route::get('/favrecipes', [FavrecipesController::class, 'index'])->name('favrecipes');  
+Route::get('/newrecipe', [NewRecipeController::class, 'index'])->name('newrecipe'); 
