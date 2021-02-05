@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class NewRecipe extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'recipeTitel',
+        'recipeText'
+    ]; 
+
 }
