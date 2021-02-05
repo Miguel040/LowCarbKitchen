@@ -36,3 +36,4 @@ Route::get('/famrecipes', [FamrecipesController::class, 'index'])->name('famreci
 Route::get('/ranrecipe', [RanrecipeController::class, 'index'])->name('ranrecipe');
 Route::get('/favrecipes', [FavrecipesController::class, 'index'])->name('favrecipes');  
 Route::get('/newrecipe', [NewRecipeController::class, 'index'])->name('newrecipe'); 
+Route::post('/newrecipe', [NewRecipeController::class, 'store']); 
