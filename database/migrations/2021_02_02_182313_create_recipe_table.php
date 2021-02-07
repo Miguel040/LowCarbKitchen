@@ -13,11 +13,12 @@ class CreateRecipeTable extends Migration
      */
     public function up()
     {
-        Schema::create('recipe', function (Blueprint $table) {
+        Schema::create('recipes', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade'); 
             $table->text('recipeTitel');
             $table->text('recipeText');
+            $table->string('dataUpload')->nullable(); 
             $table->timestamps();
         });
     }
