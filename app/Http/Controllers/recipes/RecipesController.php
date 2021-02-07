@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\recipes;
 
-use App\Http\Controllers\Controller;
 use App\Models\Recipes;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class RecipesController extends Controller
 {
@@ -15,7 +16,7 @@ class RecipesController extends Controller
      */
     public function index()
     {
-        //
+    
     }
 
     /**
@@ -25,7 +26,7 @@ class RecipesController extends Controller
      */
     public function create()
     {
-        //
+       
     }
 
     /**
@@ -36,7 +37,20 @@ class RecipesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'dataUpload' => 'required | file', 
+            'recipeTitel' => 'required',
+            'recipeText' => 'required'
+        ]); 
+
+        Recipes::create([
+            'user_id'=> auth()->id(),
+            'recipeTitel'=> $request->recipeTitel,
+            'recipeText'=> $request->recipeText,
+            'dataUpload'=> $request->dataUpload->store('uploads')
+        ]);
+
+        return back(); 
     }
 
     /**
@@ -81,6 +95,7 @@ class RecipesController extends Controller
      */
     public function destroy(Recipes $recipes)
     {
-        //
+        $recipes->delete(); 
+        return back(); 
     }
 }
