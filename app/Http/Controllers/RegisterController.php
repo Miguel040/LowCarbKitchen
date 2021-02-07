@@ -30,7 +30,7 @@ class RegisterController extends Controller
         'password' => Hash::make($request->password),
    ]); 
 
-   return view('home'); 
+   return view('auth.login'); 
  }
 }
 
