@@ -10,7 +10,7 @@
     <div class="container mx-auto bg-green-200 p-5 shadow-lg rounded-b-lg">
         <nav class="flex justify-between">
             <div>
-                <a href="{{ route('home') }}">Logo</a>
+                <a class="text-3xl" href="{{ route('home') }}">Low Carb Kitchen</a>
             </div>
             <ul class="flex flex-row justify-center">
                 <li class="pr-5"><a href="{{ route('famrecipes') }}">Beliebte Rezepte</a></li>
@@ -26,6 +26,7 @@
             @endguest
 
             @auth
+            <li class="pr-5">Moin <a href="">{{auth()->user()->name}}</a></li>
             <li class="pr-5"><a href="{{ route('logout') }}">Logout</a></li>
             @endauth
             </ul>
