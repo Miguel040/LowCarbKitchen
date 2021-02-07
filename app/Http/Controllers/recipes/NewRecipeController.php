@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\recipes;
 
-use App\Http\Controllers\Controller;
-use App\Models\NewRecipe;
+use App\Models\Recipes;
+
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class NewRecipeController extends Controller
 {
@@ -15,7 +16,12 @@ class NewRecipeController extends Controller
      */
     public function index()
     {
-        return view('recipes.newrecipe'); 
+        $recipes = Recipes::get();
+
+        return view('recipes.newrecipe', [
+            'recipes' => $recipes
+        ]);  
+
     }
 
     /**
@@ -26,21 +32,7 @@ class NewRecipeController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
 
-            'recipeTitel' => 'required',
-            'recipeText' => 'required'
-        ]); 
-
-        dd($request); 
-            $request -> create([
-            'recipeTitel' =>$request->recipeTitel,
-            'recipeText' =>$request->recipeText
-        ]); 
-
-        dd($request); 
-
-        return back(); 
     }
 
     /**
